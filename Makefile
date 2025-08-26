@@ -11,7 +11,8 @@ LIBFT_DIR   = includes
 LIBFT       = $(LIBFT_DIR)/libft.a
 LIBFT_LINK  = -L$(LIBFT_DIR) -l:libft.a
 
-SRCS    = cub3d.c math.c close.c
+SRCS    =	cub3d.c math.c close.c hook.c\
+			render.c
 OBJDIR  = obj
 OBJS    = $(SRCS:%.c=$(OBJDIR)/%.o)
 

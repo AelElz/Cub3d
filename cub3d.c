@@ -6,7 +6,7 @@
 /*   By: ael-azha <ael-azha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 10:40:21 by ael-azha          #+#    #+#             */
-/*   Updated: 2025/08/26 15:13:17 by ael-azha         ###   ########.fr       */
+/*   Updated: 2025/08/26 17:36:57 by ael-azha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,11 @@ int main()
 
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,
 			&img.endian);
-	draw_line(&img, 100, 100, 500, 500, 0x0FF0000);
 	mlx_put_image_to_window(vars.mlx, vars.win, img.img, 0, 0);
+	
+	mlx_key_hook(vars.win, key_hook, &vars);
+	mlx_mouse_hook(vars.win, mouse_hook, NULL);
+	
 	mlx_hook(vars.win, 2, 1L<<0, mlx_close, &vars);
 	mlx_hook(vars.win, 17, 0, handle_destroy, &vars);
 	mlx_loop(vars.mlx);
