@@ -1,5 +1,3 @@
-👇
-
 🕹️ Cub3D
 
 Cub3D is a simple 3D game engine inspired by Wolfenstein 3D, built using raycasting and the MiniLibX graphics library.
